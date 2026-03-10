@@ -11,7 +11,7 @@ public class main {
             System.out.println("1.Admin");
             System.out.println("2.User");
             System.out.println("3.Exit");
-            System.out.print("Enter NUmber: ");
+            System.out.print("Enter Number: ");
             int op = sc.nextInt();
             if(op==1){
                 a.A();

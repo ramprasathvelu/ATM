@@ -21,7 +21,6 @@ public class User {
         int ePass = sc.nextInt();
         String user = ul.UL(eUser,ePass);
         if(user != null){
-            
             while(true){
     
                 System.out.println("\n---- "+user+" ----");
@@ -92,7 +91,7 @@ public class User {
     
                 else if(op == 5){
     
-                    System.out.println("Thank you for using ATM");
+                    System.out.println("Thank you "+user+"for using ATM ");
                     break;
     
                 }

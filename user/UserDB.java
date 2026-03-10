@@ -1,12 +1,10 @@
 package user;
 import java.util.*;
 public class UserDB {
-    public void UDB(){
-        static HashMap<String, Integer> users = new HashMap<>();
+    public static HashMap<String,Integer> users = new HashMap<>();
+    static {
 
-        static {
-            users.put("ram", 7777);
-            users.put("prasath", 3333);
-        }
+        users.put("ram",7777);
+        users.put("prasath",3333);
     }
 }
