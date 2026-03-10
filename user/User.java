@@ -1,0 +1,73 @@
+package user;
+import java.util.*;
+public class User {
+    public void U(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("User Mode");
+        int pin = 7777;
+        int balance = 1000;
+        while (true) { 
+            System.out.println("1.Check Balance");
+            System.out.println("2.Deposit");
+            System.out.println("3.Withdraw");
+            System.out.println("4.Pin Change");
+            System.out.println("5.Exit");
+            int op = sc.nextInt();
+                if(op==1){
+                    CheckBalance c = new CheckBalance();
+                    int p = sc.nextInt();
+                    if(p==pin){
+                        c.C(balance);
+                    }
+                    else{
+                        System.out.println("Invalid PIN");
+                    }
+                }
+
+                else if(op==2){
+                    Deposit d = new Deposit();
+                    int p = sc.nextInt();
+                    if(p==pin){
+                        balance = d.D(balance);
+                        System.out.println("Updated Balance :"+balance);
+                    }
+                    else{
+                        System.out.println("Invalid PIN");
+                    }
+                }
+
+                else if(op==3){
+                    Withdraw w = new Withdraw();
+                    int p = sc.nextInt();
+                    if(p==pin){
+                        balance = w.W(balance);
+                        System.out.println("Updated Balance :"+balance);
+                    }
+                    else{
+                        System.out.println("Invalid PIN");
+                    } 
+                }
+
+                else if(op==4){
+                    PinChange p1 = new PinChange();
+                    int p = sc.nextInt();
+                    if(p==pin){
+                       pin = p1.P();
+                    }
+                    else{
+                        System.out.println("Invalid PIN");
+                    }
+                }
+
+                else if(op==5) {
+                    System.out.println("Thank you for using ATM");
+                    break;
+                }
+
+                else{
+                    System.out.println("Invalid Option");
+                }
+            }
+        }
+    }
+
