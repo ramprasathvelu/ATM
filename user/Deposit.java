@@ -6,11 +6,17 @@ import db.TransactionLogger;
 import java.util.Scanner;
 
 public class Deposit {
-
+    Scanner sc = new Scanner(System.in);
     public int D(int b,String user){
-        Scanner sc = new Scanner(System.in);
         System.out.print("Enter amount to deposit: ");
-        int a = sc.nextInt();
+        int a;
+        try {
+            a = sc.nextInt();
+        } 
+        catch (Exception e) {
+            System.out.println("Invalid! Try Again");
+            return 0;
+        }
         if(a % 100 == 0){
             b += a;
             Logs.addLog("User Deposited: "+a);

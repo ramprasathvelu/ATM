@@ -1,13 +1,19 @@
 package user;
-import db.TransactionLogger;
 import admin.*;
+import db.TransactionLogger;
 import java.util.Scanner;
 public class Withdraw {
+    Scanner sc = new Scanner(System.in);
     public int W(int b,String user){
-        Admin ad = new Admin();
-        Scanner sc = new Scanner(System.in);
         System.out.print("Enter amount to withdraw: ");
-        int a = sc.nextInt();
+        int a;
+        try {
+            a = sc.nextInt();
+        } 
+        catch (Exception e) {
+            System.out.println("Invalid! Try Again");
+            return 0;
+        }
         if (Admin.atmBalance>=a) {
             if(a % 100 == 0 && a <= b){
                 b -= a;

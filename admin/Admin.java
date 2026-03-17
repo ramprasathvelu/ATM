@@ -5,20 +5,29 @@ public class Admin {
     String adminID = "ramprasath";
     int password = 2829;
     public static int atmBalance = 10000;
-    // public int atmBal(){
-    //     return this.atmBalance;
-    // }
+    Scanner sc = new Scanner(System.in);
     public void A(){
-        Scanner sc = new Scanner(System.in);
 
         Balance b = new Balance();
         Load l = new Load();
 
         System.out.print("Enter Admin ID: ");
-        String id = sc.next();
+        String id;
+        try {
+            id = sc.next();
+        } catch (Exception e) {
+            System.out.println("Invalid! Try Again");
+            return;
+        }
 
         System.out.print("Enter Password: ");
-        int pass = sc.nextInt();
+        int pass;
+        try {
+            pass = sc.nextInt();
+        } catch (Exception e) {
+            System.out.println("Invalid! Try Again");
+            return;
+        }
 
         if(this.adminID.equals(id) && this.password==pass){
             while(true){
@@ -30,10 +39,10 @@ public class Admin {
                 System.out.print("Enter option: ");
                 int op = sc.nextInt();
                 if(op==1){
-                    b.B(this.atmBalance);
+                    b.B(atmBalance);
                 }
                 else if(op==2){
-                    this.atmBalance += l.L();
+                    atmBalance += l.L();
                 }
                 else if(op==3){
                     Logs.showLogs();

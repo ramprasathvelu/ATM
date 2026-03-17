@@ -3,9 +3,8 @@ package user;
 import java.util.Scanner;
 
 public class User {
+    Scanner sc = new Scanner(System.in);
     public void U(){
-
-        Scanner sc = new Scanner(System.in);
         int pin = 7777;
         int balance = 1000;
         int attempt = 0;

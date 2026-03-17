@@ -1,9 +1,9 @@
 import admin.Admin;
 import java.util.*;
 import user.User;
-public class main {
+public class Main{
+    static Scanner sc = new Scanner(System.in) ;
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in) ;
         Admin a = new Admin();
         User u = new User();
         while(true){
@@ -12,7 +12,14 @@ public class main {
             System.out.println("2.User");
             System.out.println("3.Exit");
             System.out.print("Enter Number: ");
-            int op = sc.nextInt();
+            int op;
+            try {
+                op = sc.nextInt();
+            } 
+            catch (Exception e) {
+                System.out.println("Invalid! Try Again");
+                continue;
+            }
             if(op==1){
                 a.A();
             }
